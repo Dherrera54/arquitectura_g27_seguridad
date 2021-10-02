@@ -21,6 +21,6 @@ def build_token():
 
 @app.route('/url-ataques')
 def attack():
-    headers = {"Authorization": build_token()}
+    headers = {"Authorization": "Bearer " + build_token()}
     print("REQUEST :" + headers)
     return requests.get('http://localhost:5000/pacientes', headers).content
