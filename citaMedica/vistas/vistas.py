@@ -21,7 +21,7 @@ class VistaLogIn(Resource):
                 return "El paciente no existe", 404
             else:
                 token_de_acceso = create_access_token(identity=paciente.id)
-                return {"mensaje": "Inicio de sesión exitoso", "token": token_de_acceso}
+                return {"mensaje": "Inicio de sesión exitoso", "token": token_de_acceso, "id_paciente":paciente.id}
 
 
 class VistaSignIn(Resource):
