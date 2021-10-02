@@ -1,10 +1,11 @@
 from flask_restful import Resource
-from ..modelos import db, Paciente, PacienteSchema
+from ..modelos import db, Paciente, PacienteSchema, Tratamiento, TratamientoSchema
 from flask import request
 from sqlalchemy.exc import IntegrityError
 from flask_jwt_extended import jwt_required , create_access_token
 
 paciente_schema = PacienteSchema()
+tratamiento_schema = TratamientoSchema()
 
 class VistaPacientes(Resource):
 
@@ -44,3 +45,23 @@ class VistaPaciente(Resource):
         paciente.contrasena = request.json.get("contrasena",paciente.contrasena)
         db.session.commit()
         return paciente_schema.dump(paciente)
+
+    @jwt_required()
+    def get(self,id_paciente):
+        paciente = Paciente.query.get_or_404(id_paciente)
+        return paciente_schema.dump(paciente)
+
+class VistaTratamientoPaciente(Resource):
+
+    @jwt_required()
+    def post(self, id_paciente):
+        nuevo_tratamiento = Tratamiento(tratamiento=request.json["tratamiento"])
+        paciente = Paciente.query.get_or_404(id_paciente)
+        paciente.tratamientos.append(nuevo_tratamiento)
+        try:
+            db.session.commit()
+        except IntegrityError:
+            db.session.rollback()
+            return 'Nombre de tratamiento existente',409
+
+        return tratamiento_schema.dump(nuevo_tratamiento)
