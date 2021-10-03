@@ -4,6 +4,10 @@ from flask import request
 from sqlalchemy.exc import IntegrityError
 from flask_jwt_extended import jwt_required , create_access_token
 
+import logging
+
+
+
 paciente_schema = PacienteSchema()
 tratamiento_schema = TratamientoSchema()
 
@@ -15,6 +19,8 @@ class VistaPacientes(Resource):
 
 class VistaLogIn(Resource):
     def post(self):
+            logging.basicConfig(filename='log.txt', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
+            logging.info('El inicio de sesion fue exitoso')
             paciente = Paciente.query.filter(Paciente.nombre == request.json["nombre"],
                                        Paciente.contrasena == request.json["contrasena"]).first()
             db.session.commit()
@@ -26,7 +32,7 @@ class VistaLogIn(Resource):
 
 
 class VistaSignIn(Resource):
-    
+
     def post(self):
         nuevo_paciente = Paciente(nombre=request.json["nombre"], contrasena=request.json["contrasena"])
         token_de_acceso= create_access_token(identity=request.json['nombre'])
@@ -34,7 +40,6 @@ class VistaSignIn(Resource):
         db.session.commit()
         return {'mensaje':f'paciente {nuevo_paciente.nombre} creado exitosamente', 'token de acceso':token_de_acceso}
 
-    
 
 class VistaPaciente(Resource):
 
