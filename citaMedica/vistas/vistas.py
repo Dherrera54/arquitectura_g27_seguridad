@@ -20,7 +20,7 @@ class VistaPacientes(Resource):
 class VistaLogIn(Resource):
     def post(self):
             logging.basicConfig(filename='log.txt', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
-            logging.info('El inicio de sesion fue exitoso')
+            logging.info('Inicio de sesion fue exitoso')
             paciente = Paciente.query.filter(Paciente.nombre == request.json["nombre"],
                                        Paciente.contrasena == request.json["contrasena"]).first()
             db.session.commit()

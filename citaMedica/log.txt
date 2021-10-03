@@ -1,2 +1,12 @@
-werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:38:05] "POST /login HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:38:06] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:46] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:47] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:47] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:52] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:53] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:56] "POST /login HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:40:59] "[33mPOST /login HTTP/1.1[0m" 404 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:41:00] "[33mPOST /login HTTP/1.1[0m" 404 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:41:01] "[33mPOST /login HTTP/1.1[0m" 404 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:41:01] "[33mPOST /login HTTP/1.1[0m" 404 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:41:01] "[33mPOST /login HTTP/1.1[0m" 404 -
+werkzeug - INFO - 127.0.0.1 - - [03/Oct/2021 09:41:01] "[33mPOST /login HTTP/1.1[0m" 404 -
