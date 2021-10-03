@@ -7,7 +7,6 @@ from flask_jwt_extended import jwt_required , create_access_token
 import logging
 
 
-
 paciente_schema = PacienteSchema()
 tratamiento_schema = TratamientoSchema()
 

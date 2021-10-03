@@ -1,4 +1,4 @@
-from citaMedica import create_app
+from APIGateway import create_app
 from .modelos import db, Paciente
 from flask_restful import Api
 from .vistas import VistaPacientes, VistaSignIn, VistaLogIn, VistaPaciente, VistaTratamientoPaciente
